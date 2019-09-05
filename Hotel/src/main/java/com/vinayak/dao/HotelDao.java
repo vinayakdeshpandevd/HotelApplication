@@ -11,4 +11,4 @@ public interface HotelDao {
 	public List<Hotel> viewProp();
 	public Address addingAddress(Address address);
 	public int addingAddressToProperty(int propertyId,int addressId);
-}
+ }

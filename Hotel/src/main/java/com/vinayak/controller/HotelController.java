@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.vinayak.dao.HotelDaoImpl;
+import com.vinayak.email.AwsSimpleEmailService;
 import com.vinayak.model.Address;
 import com.vinayak.model.Hotel;
 import com.vinayak.model.Register;
@@ -81,7 +82,20 @@ public class HotelController {
 		  System.out.println("add address to property");
 		return "addedAddressToProperty.jsp";
 }
+	 
+	 @RequestMapping("/mail")
+	 public String mail() {
+		 AwsSimpleEmailService ases=new AwsSimpleEmailService();
+		 try {
+			ases.awsMail();
+		} catch (Exception e) {
+			 
+			e.printStackTrace();
+		}
+		return "sentSuccess.jsp";
+	 
 	}
+}
 	 
 	
 

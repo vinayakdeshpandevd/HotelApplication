@@ -28,7 +28,8 @@ Session session = sessionFactory.openSession();
 		trnx.commit();
 		
 		session.close();
-		return null;
+		System.out.println("Regiser id in dao IMPL is: "+register.getId());
+		return register;
 		 
 	}
 	 public int checkLogin(String username, String password){

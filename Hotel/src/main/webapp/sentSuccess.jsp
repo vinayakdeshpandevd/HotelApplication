@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="mail">
+<form action="index.jsp">
 <center>
-<marquee><h1>Thank you, Your Booking is Successfull, Have a nice day.</h1></marquee><br><br>
-<input type="submit" value="Send Confirmation to mail">
+<h1>Confirmation mail sent Successfully</h1><br><br>
+<input type="submit" value="Logout">
 </center>
 </form>
 </body>

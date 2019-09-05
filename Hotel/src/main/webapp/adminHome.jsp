@@ -33,11 +33,11 @@
  <input type="submit" value="Logout">
  </center>
 </form><br><br>
-<form action="file">
+<!-- <form action="file">
 <center>
  
 <input type="submit" value="copy to file">
 </center>
-</form>
+</form> -->
 </body>
 </html>

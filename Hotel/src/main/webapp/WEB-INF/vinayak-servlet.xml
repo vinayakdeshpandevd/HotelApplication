@@ -20,9 +20,9 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
  	
  	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/hotel?createDatabaseIfNotExist=true"/>
-		<property name="username" value="root"/>
-		<property name="password" value=""/>
+		<property name="url" value="jdbc:mysql://mydb1.cuxlabrlm5cg.ap-south-1.rds.amazonaws.com:3306/hotel?createDatabaseIfNotExist=true"/>
+		<property name="username" value="admin"/>
+		<property name="password" value="vinayak123"/>
 	</bean>
 
 	<!-- Session Factory Declaration -->
