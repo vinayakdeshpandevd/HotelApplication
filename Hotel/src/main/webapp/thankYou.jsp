@@ -7,11 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="mail">
 <center>
-<marquee><h1>Thank you, Your Booking is Successfull, Have a nice day.</h1></marquee><br><br>
-<input type="submit" value="Send Confirmation to mail">
+<marquee><h1>Thank you</h1></marquee>
 </center>
-</form>
 </body>
 </html>

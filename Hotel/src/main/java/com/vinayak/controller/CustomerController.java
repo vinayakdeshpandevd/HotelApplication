@@ -28,17 +28,14 @@ public String register(Model model) {
 	
 	  System.out.println("register controller");
 		 model.addAttribute("register", new Register());
-		  
 	return "register.jsp";
 	 
 }
 @RequestMapping(value="/regDone", method=RequestMethod.POST)
-public String registerCustomer(@ModelAttribute("register") Register register, Model model) {
+public String registerCustomer(@ModelAttribute("register") Register register) {
 	customerservice.regEmployee(register);
 	System.out.println("reg done controller");
-	System.out.println("Regiser id in Cust controller is : "+register.getId());
-	 model.addAttribute("forRegisterId",register.getId()); //for sending register id to regSucId.jsp
-	return "regSucId.jsp";
+	return "redirect:/index.jsp";
 	
 }
 @RequestMapping("/customerLogin")
@@ -106,23 +103,24 @@ public String bookingDone(@ModelAttribute("booking") Booking booking , HttpServl
 	model.addAttribute("register", register);
 	return "bookingDone.jsp";
 	
+}
+@RequestMapping("/file")
+public void fileFormat() throws IOException{
+	List<Hotel> h=new ArrayList();
+h=customerservice.allHotelAttributes();
+	FileWriter file= new FileWriter("E:\\HotelList.csv");
+  for (Hotel hotel : h) {
+	  System.out.println("details of hotels"+hotel);
+	  System.out.println(hotel.getPropertyName());
+	file.write(hotel.getPropertyName());
+	file.write(",");
+	file.write(hotel.getPcity());
+	 
+	file.write("\n");
 	
 }
-	
-	/*
-	 * @RequestMapping("/file") public void fileFormat() throws IOException{
-	 * List<Hotel> h=new ArrayList(); h=customerservice.allHotelAttributes();
-	 * FileWriter file= new FileWriter("E:\\HotelList.csv"); for (Hotel hotel : h) {
-	 * System.out.println("details of hotels"+hotel);
-	 * System.out.println(hotel.getPropertyName());
-	 * file.write(hotel.getPropertyName()); file.write(",");
-	 * file.write(hotel.getPcity());
-	 * 
-	 * file.write("\n");
-	 * 
-	 * } file.close(); }
-	 */
-	 
+	file.close();
+}
 
 }
 
